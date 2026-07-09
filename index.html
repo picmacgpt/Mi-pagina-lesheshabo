@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>REVISTAS DEL TEDDYeLcABEZON</title>
+    <style>
+        body {
+            background-color: #C1E1C1;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Estilos de la encuesta estilo Instagram */
+        .poll-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            width: 100%;
+            max-width: 340px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            text-align: center;
+            margin: 20px 0;
+            color: #262626;
+        }
+
+        .poll-question {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .poll-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-option {
+            background-color: #f4f4f4;
+            border: none;
+            border-radius: 12px;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #8e8e8e;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-option:hover:not(:disabled) {
+            background-color: #eaeaea;
+        }
+
+        .voted .btn-option {
+            cursor: default;
+            background-color: #f4f4f4;
+        }
+
+        .voted .btn-option.selected {
+            background-color: #e1f5fe;
+            color: #039be5;
+        }
+
+        .percentage {
+            display: none;
+            font-weight: 700;
+        }
+
+        .voted .percentage {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+<h1 style="color: red;">carniceria chapala</h1>
+<img src="29e0d7ffba6e136932c3392c44bba06f.jpg" width="350" height="300">
+    <table style="border: 1px solid black;">
+        <tr>
+            <th>Mercancia</th>
+            <th>Precio</th>
+        </tr>
+        <tr>
+            <td>yupi de cerdo</td>
+            <td>30$</td>
+        </tr>
+        <tr>
+            <td>prepucio de yegua</td>
+            <td>60$</td>
+        </tr>
+        <tr>
+            <td>huevos de toro</td>
+            <td>33$</td>
+        </tr>
+        <tr>
+            <td>prepucio de tiburon</td>
+            <td>88$</td>
+        </tr>
+    </table>
+<h1>recuerdos 2020</h1>
+<img src="images.jpeg" width="350" height="300">
+<h1>negro y blanco se tocan en un puesto de tacos</h1>
+<img src="Screenshot_20260629_085423_Instagram.jpg" width="350" height="300">
+<h1>holaNena.com</h1>
+<img src="Screenshot_20260630_220533_Instagram.jpg" width="350" height="300">
+<h1>comandante supremo</h1>
+<img src="Screenshot_20260524_224514_Google.jpg" width="350" height="300">
+<h1>I'm better</h1>
+<img src="e27658d959062f622e888a0d6a506eb3.jpg" width="350" height="300">
+<h1>chico peruano</h1>
+<img src="Screenshot_20260630_215814_Instagram.jpg" width="350" height="300">
+<h1>Hello neighbor early pornotype</h1>
+<img src="IMG-20260705-WA0024.jpg" width="350" height="300">
+    <h1>tiempo restante</h1>
+    <div id="countdown">cargando...</div>
+
+    <!-- Bloque de la Encuesta Replicada -->
+    <div class="poll-card" id="pollCard">
+        <div class="poll-question">eres judio...?</div>
+        <div class="poll-options">
+            <button class="btn-option" onclick="castVote('si')" id="opt-si">
+                <span>Sí</span>
+                <span class="percentage" id="percent-si">0%</span>
+            </button>
+            <button class="btn-option" onclick="castVote('no')" id="opt-no">
+                <span>No</span>
+                <span class="percentage" id="percent-no">0%</span>
+            </button>
+        </div>
+    </div>
+
+<a href="https://vt.tiktok.com/ZSCKvPgkA/">llama a 7841103460</a>
+<a href="https://youtu.be/dQw4w9WgXcQ?is=AFcSHAq9OnQdQkDD" target="_blank" rel="noopener noreferrer">peruEsClave</a>
+
+    <script>
+        // Lógica del Temporizador Existente
+        const DIAS_TOTALES = 33;
+        const TIEMPO_EN_MILISEGUNDOS = DIAS_TOTALES * 24 * 60 * 60 * 1000;
+
+        let fechaFinal = localStorage.getItem('fechaFinalTemporizador');
+
+        if (!fechaFinal) {
+            fechaFinal = new Date().getTime() + TIEMPO_EN_MILISEGUNDOS;
+            localStorage.setItem('fechaFinalTemporizador', fechaFinal);
+        } else {
+            fechaFinal = parseInt(fechaFinal);
+        }
+
+        const intervalo = setInterval(() => {
+            const ahora = new Date().getTime();
+            const distancia = fechaFinal - ahora;
+
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').innerHTML =
+                `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+
+            if (distancia < 0) {
+                clearInterval(intervalo);
+                document.getElementById('countdown').innerHTML = "0d 0h 0m 0s";
+                localStorage.removeItem('fechaFinalTemporizador');
+            }
+        }, 1000);
+
+        // Lógica de la Encuesta (Solo 1 voto, no se reinicia)
+        let pollData = { si: 12, no: 8 };
+        const localStorageKey = 'instagram_poll_voted_v1';
+
+        function initPoll() {
+            const savedVote = localStorage.getItem(localStorageKey);
+            if (savedVote) {
+                pollData[savedVote]++;
+                displayResults(savedVote);
+            }
+        }
+
+        function castVote(option) {
+            if (localStorage.getItem(localStorageKey)) return;
+            localStorage.setItem(localStorageKey, option);
+            pollData[option]++;
+            displayResults(option);
+        }
+
+        function displayResults(selectedOption) {
+            const totalVotes = pollData.si + pollData.no;
+            const percentSi = Math.round((pollData.si / totalVotes) * 100) || 0;
+            const percentNo = Math.round((pollData.no / totalVotes) * 100) || 0;
+
+            document.getElementById('percent-si').innerText = percentSi + '%';
+            document.getElementById('percent-no').innerText = percentNo + '%';
+
+            document.getElementById('pollCard').classList.add('voted');
+            document.getElementById('opt-si').disabled = true;
+            document.getElementById('opt-no').disabled = true;
+            document.getElementById(`opt-${selectedOption}`).classList.add('selected');
+        }
+
+        // Ejecutar funciones al cargar la página completamente
+        window.onload = function() {
+            initPoll();
+        };
+    </script>
+</body>
+</html>
+
