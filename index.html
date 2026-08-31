@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CUMPLEAÑOS DE CAMILA</title>
+  <style>
+    body {
+      background: white;
+      color: white;
+      font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h2 {
+      color: #ffdd00;
+      font-size: 2rem;
+      text-shadow: 2px 2px 4px #000;
+    }
+    p {
+      max-width: 500px;
+      margin: 20px auto;
+      line-height: 1.5;
+    }
+    .card {
+      display: inline-block;
+      margin: 15px;
+      vertical-align: top;
+    }
+    .card img {
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      max-width: 100%;
+      height: auto;
+    }
+    .music-btn {
+      display: block;
+      margin: 10px auto 0;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #ff6b6b;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    .music-btn:hover {
+      background: #ff4757;
+    }
+    .music-btn.playing {
+      background: #2ecc71;
+    }
+
+    .player {
+      width: 300px;
+      margin: 15px auto 0;
+    }
+    .player .seekbar {
+      width: 100%;
+      accent-color: white;
+      cursor: pointer;
+    }
+    .player .controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 10px;
+    }
+    .player .side-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: white;
+      line-height: 1;
+    }
+    .player .play-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #111;
+      border: none;
+      color: white;
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Globos y confeti */
+    #party-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 9999;
+    }
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 60px;
+      height: 75px;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation: rise linear forwards;
+      opacity: 0.9;
+    }
+    .balloon::after {
+      content: '';
+      position: absolute;
+      bottom: -25px;
+      left: 50%;
+      width: 1px;
+      height: 25px;
+      background: rgba(255,255,255,0.6);
+    }
+    @keyframes rise {
+      to {
+        transform: translateY(-115vh) rotate(10deg);
+      }
+    }
+    .confetti {
+      position: absolute;
+      top: -20px;
+      width: 10px;
+      height: 10px;
+      opacity: 0.9;
+      animation: fall linear forwards;
+    }
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="party-overlay"></div>
+
+  <h2>FELIZ CUMPLEAÑOS CAMILA</h2>
+  <p>
+    Por este gran día especial todos los judíos no van
+    a dar patagonia solo por esta ocasión y los freddys serán
+    los que te canten las mañanitas por haber cumplido 1000
+    años.
+  </p>
+
+  <div class="card">
+    <img src="d307bf2ddb1b0d1440be63c503a94d07.jpg" width="350" height="300" alt="foto 1">
+    <!--1 boton de musica-->
+    <div class="player" id="player1">
+      <input type="range" class="seekbar" value="0" min="0" max="100" step="0.1">
+      <div class="controls">
+        <button class="side-btn rewind-btn">⏪</button>
+        <button class="play-btn">▶</button>
+        <button class="side-btn forward-btn">⏩</button>
+      </div>
+      <audio class="song" src="INDIGO_DIVA_-_Here_There_And_Everywhere_The_Beatles_cover_(mp3.pm).mp3"></audio>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="f13c3acd6f8c5825d7089ae593546d83.jpg" width="350" height="300" alt="foto 2">
+    <!--solo para ti-->
+    <div class="player" id="player2">
+      <input type="range" class="seekbar" value="0" min="0" max="100" step="0.1">
+      <div class="controls">
+        <button class="side-btn rewind-btn">⏪</button>
+        <button class="play-btn">▶</button>
+        <button class="side-btn forward-btn">⏩</button>
+      </div>
+      <audio class="song" src="The_Rutles_-_Ouch_parodiya_na_Help_The_Beatles_(mp3.pm).mp3"></audio>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="2525c45b561e19dd2fde1b31705d3a9b.jpg" width="350" height="300" alt="foto 3">
+    <div class="player" id="player3">
+      <input type="range" class="seekbar" value="0" min="0" max="100" step="0.1">
+      <div class="controls">
+        <button class="side-btn rewind-btn">⏪</button>
+        <button class="play-btn">▶</button>
+        <button class="side-btn forward-btn">⏩</button>
+      </div>
+      <audio class="song" src="The_Beatles_-_Imagin_(mp3.pm).mp3"></audio>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="f78817d6903b2e268c2007e2fbc36722.jpg" width="350" height="300" alt="foto 4">
+    <!--seccion adolf paul-->
+    <div class="player" id="player4">
+      <input type="range" class="seekbar" value="0" min="0" max="100" step="0.1">
+      <div class="controls">
+        <button class="side-btn rewind-btn">⏪</button>
+        <button class="play-btn">▶</button>
+        <button class="side-btn forward-btn">⏩</button>
+      </div>
+      <audio class="song" src="INDIGO_DIVA_-_I_Need_You_The_Beatles_cover_(mp3.pm).mp3"></audio>
+    </div>
+  </div>
+
+  <script>
+    // Reproductor con barra de progreso, retroceder y adelantar
+    document.querySelectorAll('.player').forEach(player => {
+      const audio = player.querySelector('audio');
+      const seekbar = player.querySelector('.seekbar');
+      const playBtn = player.querySelector('.play-btn');
+      const rewindBtn = player.querySelector('.rewind-btn');
+      const forwardBtn = player.querySelector('.forward-btn');
+
+      audio.addEventListener('loadedmetadata', () => {
+        seekbar.max = audio.duration;
+      });
+
+      audio.addEventListener('timeupdate', () => {
+        seekbar.value = audio.currentTime;
+      });
+
+      seekbar.addEventListener('input', () => {
+        audio.currentTime = seekbar.value;
+      });
+
+      playBtn.addEventListener('click', () => {
+        if (audio.paused) {
+          document.querySelectorAll('.player audio').forEach(a => {
+            if (a !== audio) a.pause();
+          });
+          document.querySelectorAll('.player .play-btn').forEach(b => {
+            if (b !== playBtn) b.textContent = '▶';
+          });
+          audio.play();
+          playBtn.textContent = '⏸';
+        } else {
+          audio.pause();
+          playBtn.textContent = '▶';
+        }
+      });
+
+      rewindBtn.addEventListener('click', () => {
+        audio.currentTime = Math.max(0, audio.currentTime - 10);
+      });
+
+      forwardBtn.addEventListener('click', () => {
+        audio.currentTime = Math.min(audio.duration || Infinity, audio.currentTime + 10);
+      });
+
+      audio.addEventListener('ended', () => {
+        playBtn.textContent = '▶';
+      });
+    });
+
+    // Globos y confeti al entrar a la página
+    (function () {
+      const overlay = document.getElementById('party-overlay');
+      const colors = ['#ff6b6b', '#ffd93d', '#6bffb8', '#6bc1ff', '#d16bff', '#ff9f6b'];
+
+      function randomColor() {
+        return colors[Math.floor(Math.random() * colors.length)];
+      }
+
+      function createBalloon() {
+        const balloon = document.createElement('div');
+        balloon.className = 'balloon';
+        balloon.style.left = Math.random() * 95 + '%';
+        balloon.style.background = randomColor();
+        const duration = 6 + Math.random() * 4;
+        balloon.style.animationDuration = duration + 's';
+        overlay.appendChild(balloon);
+        setTimeout(() => balloon.remove(), duration * 1000);
+      }
+
+      function createConfetti() {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.background = randomColor();
+        confetti.style.width = confetti.style.height = (6 + Math.random() * 6) + 'px';
+        if (Math.random() > 0.5) {
+          confetti.style.borderRadius = '50%';
+        }
+        const duration = 3 + Math.random() * 3;
+        confetti.style.animationDuration = duration + 's';
+        overlay.appendChild(confetti);
+        setTimeout(() => confetti.remove(), duration * 1000);
+      }
+
+      // Ráfaga inicial al entrar
+      for (let i = 0; i < 15; i++) {
+        setTimeout(createBalloon, i * 150);
+      }
+      for (let i = 0; i < 60; i++) {
+        setTimeout(createConfetti, i * 40);
+      }
+
+      // Un poco más de confeti cayendo durante los primeros segundos
+      const confettiInterval = setInterval(createConfetti, 120);
+      setTimeout(() => clearInterval(confettiInterval), 4000);
+    })();
+  </script>
+<a target="_blank" href="https://youtube.com/watch?v=ztoSUhbNntQ&is=PiVsn2ezglB9_wF_">haz click para tus mañanitas</a>
+<!--Esta pagina esta echa un 20% de inteligencia Artificial, por que odio alos judio
+    soy nazi super nazi, esto lo hice por que te amo mucho camlia :3-->
+</body>
+</html>
+
